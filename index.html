@@ -9,7 +9,386 @@
   <meta name="author" content="Lavadero AP Motors" />
 
   <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lavadero AP Motors | Lavado y Detailing Profesional</title>
+  <meta name="description" content="Lavadero AP Motors - Lavado y detailing profesional en Ciudad 18 de Mayo. Lavado express, premium, cerámico y más." />
+  <meta name="keywords" content="lavadero, detailing, Ciudad 18 de Mayo, cerámico, autos, limpieza automotriz" />
+  <meta name="author" content="Lavadero AP Motors" />
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Iconos -->
+  <script src="https://kit.fontawesome.com/a2b8e6d4d5.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --color-principal: #00c3ff;
+      --color-secundario: #0077ff;
+      --color-fondo: #0a0a0a;
+      --vidrio: rgba(255, 255, 255, 0.08);
+      --borde: rgba(255, 255, 255, 0.2);
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--color-fondo);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.8)),
+        url('https://i0.wp.com/colorcity.com.uy/wp-content/uploads/2022/10/07-Etapa-de-Micropulido-Tratamiento-Zinc-Cross.jpg?fit=800%2C600&ssl=1') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-content {
+      backdrop-filter: blur(6px);
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.2);
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero h1 {
+      font-weight: 800;
+      font-size: 3.2rem;
+      background: linear-gradient(90deg, #00c3ff, #0077ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #ddd;
+      margin-bottom: 25px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #00c3ff, #0077ff);
+      border: none;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00c3ff;
+    }
+
+    /* SOBRE NOSOTROS */
+    #nosotros {
+      background: #0e0e0e;
+    }
+
+    /* SERVICIOS */
+    #servicios {
+      background: radial-gradient(circle at top, #0f0f0f, #000);
+    }
+
+    #servicios .card {
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      color: #fff;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    #servicios .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0,195,255,0.3);
+    }
+
+    #servicios i {
+      color: var(--color-principal);
+      text-shadow: 0 0 10px var(--color-principal);
+    }
+
+    .badge-precio {
+      background-color: var(--color-secundario);
+      font-size: 1.3rem; /* tamaño aumentado */
+      padding: 10px 18px;
+      border-radius: 14px;
+      box-shadow: 0 0 10px rgba(0, 195, 255, 0.35);
+      display: inline-block;
+    }
+
+    /* CARRITO */
+    #carritoResumen {
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      padding: 25px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0,195,255,0.15);
+    }
+
+    input, select {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    input:focus, select:focus {
+      border-color: var(--color-principal);
+      box-shadow: 0 0 8px var(--color-principal);
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      border-top: 1px solid var(--borde);
+      padding: 40px 0;
+    }
+
+    footer a {
+      color: var(--color-principal);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Social icons small */
+    .social-icons a {
+      color: var(--color-principal);
+      font-size: 1.6rem;
+      margin-right: 12px;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 576px) {
+      .hero { height: 70vh; padding-top: 2rem; padding-bottom: 2rem; }
+      .hero-content { padding: 20px; }
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Lavadero AP Motors</h1>
+      <p class="lead">Estética Automotriz Profesional en Ciudad 18 de Mayo</p>
+      <a href="#cotizador" class="btn btn-primary btn-lg mt-3">Cotizá tu servicio</a>
+    </div>
+  </header>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-4 fw-bold text-light">Sobre Nosotros</h2>
+      <p class="col-md-8 mx-auto text-secondary">
+        En Lavadero AP Motors nos dedicamos al lavado y detailing profesional con atención personalizada, productos de primera calidad y resultados garantizados.
+      </p>
+
+      <div class="social-icons mt-3">
+        <a href="https://www.instagram.com/" target="_blank" class="me-3"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="me-3"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/59899946914" target="_blank" class="me-3"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.tiktok.com/" target="_blank" class="me-3"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.google.com/maps/place/34%C2%B041'58.2%22S+56%C2%B012'46.7%22W" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-4 fw-bold">Nuestros Servicios</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card p-4">
+            <i class="fas fa-car fa-3x mb-3"></i>
+            <h5>Lavado Express</h5>
+            <p>Ideal para mantener tu vehículo limpio día a día.</p>
+            <span class="badge-precio text-light mb-2">$600</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Lavado Express', 600)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card p-4">
+            <i class="fas fa-hand-sparkles fa-3x mb-3"></i>
+            <h5>Lavado Premium</h5>
+            <p>Limpieza profunda interior y exterior con acabado profesional.</p>
+            <span class="badge-precio text-light mb-2">$900</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Lavado Premium', 900)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card p-4">
+            <i class="fas fa-spray-can fa-3x mb-3"></i>
+            <h5>Detailing Completo</h5>
+            <p>Restauración, pulido y encerado con brillo espejo.</p>
+            <span class="badge-precio text-light mb-2">$2500</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Detailing Completo', 2500)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card p-4">
+            <i class="fas fa-star fa-3x mb-3"></i>
+            <h5>Tratamiento Cerámico</h5>
+            <p>Protección avanzada con nanotecnología cerámica.</p>
+            <span class="badge-precio text-light mb-2">$4500</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Tratamiento Cerámico', 4500)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COTIZADOR -->
+  <section id="cotizador" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4 fw-bold text-light">Cotización y Reserva</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6" id="carritoResumen">
+          <h5 class="mb-3"><i class="fas fa-shopping-cart"></i> Tu Cotización</h5>
+          <ul id="listaServicios" class="list-group mb-3"></ul>
+          <h5>Total: <span id="total" class="fw-bold">$0</span></h5>
+
+          <form id="formReserva" class="mt-4">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Tu nombre</label>
+              <input type="text" id="nombre" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="auto" class="form-label">Modelo del auto</label>
+              <input type="text" id="auto" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="fecha" class="form-label">Fecha y hora</label>
+              <input type="datetime-local" id="fecha" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-success w-100">
+              <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section id="ubicacion" class="py-5 text-center bg-dark">
+    <div class="container">
+      <h2 class="mb-4 fw-bold">Dónde Estamos</h2>
+      <p class="text-secondary">📍 Ciudad 18 de Mayo, Uruguay</p>
+      <div class="ratio ratio-16x9">
+        <iframe
+          src="https://www.google.com/maps?q=-34.699492,-56.212982&z=19&output=embed"
+          style="border:0;" loading="lazy" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-1"><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/" target="_blank">@lavadero_apmotors</a></p>
+      <p>📍 Ciudad 18 de Mayo</p>
+      <p>📞 <a href="https://wa.me/59899946914" target="_blank">099 946 914</a></p>
+      <p class="text-secondary small mb-0">&copy; 2025 Lavadero AP Motors</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // número WhatsApp: usar formato internacional sin ceros iniciales
+    const numeroWhatsApp = "59899946914";
+
+    const carrito = [];
+
+    function agregarServicio(nombre, precio) {
+      carrito.push({ nombre, precio });
+      actualizarResumen();
+    }
+
+    function actualizarResumen() {
+      const lista = document.getElementById('listaServicios');
+      lista.innerHTML = '';
+      let total = 0;
+
+      carrito.forEach((item, index) => {
+        total += item.precio;
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center bg-transparent text-light';
+        li.innerHTML = `
+          ${item.nombre}
+          <span>
+            $${item.precio}
+            <button class="btn btn-sm btn-danger ms-2" onclick="eliminarServicio(${index})">
+              <i class="fas fa-trash"></i>
+            </button>
+          </span>`;
+        lista.appendChild(li);
+      });
+
+      document.getElementById('total').textContent = `$${total}`;
+    }
+
+    function eliminarServicio(index) {
+      carrito.splice(index, 1);
+      actualizarResumen();
+    }
+
+    // Envío por WhatsApp desde el formulario
+    document.getElementById('formReserva').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const auto = document.getElementById('auto').value.trim();
+      const fecha = document.getElementById('fecha').value;
+
+      if (carrito.length === 0) {
+        alert("Por favor, seleccioná al menos un servicio antes de enviar.");
+        return;
+      }
+
+      const listaServicios = carrito.map(item => `• ${item.nombre} - $${item.precio}`).join('\n');
+      const total = carrito.reduce((acc, item) => acc + item.precio, 0);
+
+      const mensaje = `¡Hola! Quiero reservar los siguientes servicios:\n${listaServicios}\n\nTotal: $${total}\n\nNombre: ${nombre}\nAuto: ${auto}\nFecha: ${fecha}`;
+      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    });
+  </script>
+
+</body>
+</html>
+/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- Iconos -->
   <script src="https://kit.fontawesome.com/a2b8e6d4d5.js" crossorigin="anonymous"></script>
@@ -210,3 +589,4 @@
 
 </body>
 </html> 
+
