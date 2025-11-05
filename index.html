@@ -10,66 +10,135 @@
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
   <!-- Iconos -->
   <script src="https://kit.fontawesome.com/a2b8e6d4d5.js" crossorigin="anonymous"></script>
 
   <style>
+    :root {
+      --color-principal: #00c3ff;
+      --color-secundario: #0077ff;
+      --color-fondo: #0a0a0a;
+      --vidrio: rgba(255, 255, 255, 0.08);
+      --borde: rgba(255, 255, 255, 0.2);
+    }
+
     body {
       font-family: "Poppins", sans-serif;
-      color: #333;
+      background-color: var(--color-fondo);
+      color: #fff;
+      overflow-x: hidden;
     }
 
     /* HERO */
     .hero {
-      height: 90vh;
-      background: url('https://i0.wp.com/colorcity.com.uy/wp-content/uploads/2022/10/07-Etapa-de-Micropulido-Tratamiento-Zinc-Cross.jpg?fit=800%2C600&ssl=1') center center / cover no-repeat;
-      position: relative;
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.8)),
+        url('https://i0.wp.com/colorcity.com.uy/wp-content/uploads/2022/10/07-Etapa-de-Micropulido-Tratamiento-Zinc-Cross.jpg?fit=800%2C600&ssl=1') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
       text-align: center;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.55);
+      color: #fff;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 15px;
+      backdrop-filter: blur(6px);
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.2);
+      animation: fadeIn 1.5s ease;
     }
 
     .hero h1 {
-      font-weight: 700;
-      font-size: 3rem;
+      font-weight: 800;
+      font-size: 3.2rem;
+      background: linear-gradient(90deg, #00c3ff, #0077ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #ddd;
+      margin-bottom: 25px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #00c3ff, #0077ff);
+      border: none;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00c3ff;
+    }
+
+    /* SOBRE NOSOTROS */
+    #nosotros {
+      background: #0e0e0e;
     }
 
     /* SERVICIOS */
+    #servicios {
+      background: radial-gradient(circle at top, #0f0f0f, #000);
+    }
+
     #servicios .card {
-      border: none;
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      color: #fff;
       transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
 
     #servicios .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 20px rgba(0,195,255,0.3);
+    }
+
+    #servicios i {
+      color: var(--color-principal);
+      text-shadow: 0 0 10px var(--color-principal);
+    }
+
+    .badge-precio {
+      background-color: var(--color-secundario);
+    }
+
+    /* CARRITO */
+    #carritoResumen {
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      padding: 25px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0,195,255,0.15);
+    }
+
+    input, select {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    input:focus, select:focus {
+      border-color: var(--color-principal);
+      box-shadow: 0 0 8px var(--color-principal);
+      background-color: rgba(255, 255, 255, 0.08);
     }
 
     /* FOOTER */
     footer {
-      background: #111;
-      color: #fff;
-      padding: 30px 0;
+      background: #000;
+      border-top: 1px solid var(--borde);
+      padding: 40px 0;
     }
 
     footer a {
-      color: #25d366;
+      color: var(--color-principal);
       text-decoration: none;
     }
 
@@ -77,15 +146,10 @@
       text-decoration: underline;
     }
 
-    /* CARRITO */
-    #carritoResumen {
-      background-color: #f8f9fa;
-      border-radius: 10px;
-      padding: 20px;
-    }
-
-    .badge-precio {
-      background-color: #007bff;
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -95,68 +159,67 @@
   <header class="hero">
     <div class="hero-content">
       <h1>Brillo Total Detailing</h1>
-      <p class="lead">Lavado y Detailing Profesional en Montevideo</p>
-      <a href="#reserva" class="btn btn-primary btn-lg mt-3">Reservá tu turno</a>
+      <p class="lead">Experiencia Automotriz Profesional &amp; Futurista</p>
+      <a href="#cotizador" class="btn btn-primary btn-lg mt-3">Cotizá tu servicio</a>
     </div>
   </header>
 
   <!-- SOBRE NOSOTROS -->
   <section id="nosotros" class="py-5 text-center">
     <div class="container">
-      <h2 class="mb-4 fw-bold">Sobre Nosotros</h2>
-      <p class="col-md-8 mx-auto">
-        Somos un equipo apasionado por el cuidado automotriz. Nuestro objetivo es que cada vehículo
-        luzca como nuevo con un servicio profesional y personalizado. Trabajamos con productos de primera
-        línea como Gyeon y Meguiar’s.
+      <h2 class="mb-4 fw-bold text-light">Sobre Nosotros</h2>
+      <p class="col-md-8 mx-auto text-secondary">
+        Somos especialistas en estética automotriz avanzada. Ofrecemos resultados de alto impacto
+        con tecnología, precisión y pasión por el detalle. Productos premium, procesos certificados y atención personalizada.
       </p>
     </div>
   </section>
 
   <!-- SERVICIOS -->
-  <section id="servicios" class="py-5 text-center bg-light">
+  <section id="servicios" class="py-5 text-center">
     <div class="container">
       <h2 class="mb-4 fw-bold">Nuestros Servicios</h2>
       <div class="row g-4">
         <div class="col-md-3">
           <div class="card p-4">
-            <i class="fas fa-car fa-3x mb-3 text-primary"></i>
+            <i class="fas fa-car fa-3x mb-3"></i>
             <h5>Lavado Express</h5>
-            <p>Rápido, práctico y eficiente para mantener tu auto impecable día a día.</p>
-            <span class="badge badge-precio text-light mb-2">$600</span>
-            <button class="btn btn-outline-primary btn-sm" onclick="agregarServicio('Lavado Express', 600)">
+            <p>Ideal para mantener tu vehículo limpio día a día.</p>
+            <span class="badge badge-precio text-light mb-2">$600</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Lavado Express', 600)">
               <i class="fas fa-cart-plus"></i> Agregar
             </button>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card p-4">
-            <i class="fas fa-hand-sparkles fa-3x mb-3 text-primary"></i>
+            <i class="fas fa-hand-sparkles fa-3x mb-3"></i>
             <h5>Lavado Premium</h5>
-            <p>Incluye limpieza exterior completa y aspirado interior profundo.</p>
-            <span class="badge badge-precio text-light mb-2">$900</span>
-            <button class="btn btn-outline-primary btn-sm" onclick="agregarServicio('Lavado Premium', 900)">
+            <p>Limpieza profunda interior y exterior con acabado profesional.</p>
+            <span class="badge badge-precio text-light mb-2">$900</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Lavado Premium', 900)">
               <i class="fas fa-cart-plus"></i> Agregar
             </button>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card p-4">
-            <i class="fas fa-spray-can fa-3x mb-3 text-primary"></i>
+            <i class="fas fa-spray-can fa-3x mb-3"></i>
             <h5>Detailing Completo</h5>
-            <p>Pulido, encerado y restauración de brillo profesional.</p>
-            <span class="badge badge-precio text-light mb-2">$2500</span>
-            <button class="btn btn-outline-primary btn-sm" onclick="agregarServicio('Detailing Completo', 2500)">
+            <p>Restauración, pulido y encerado con brillo espejo.</p>
+            <span class="badge badge-precio text-light mb-2">$2500</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Detailing Completo', 2500)">
               <i class="fas fa-cart-plus"></i> Agregar
             </button>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card p-4">
-            <i class="fas fa-star fa-3x mb-3 text-primary"></i>
+            <i class="fas fa-star fa-3x mb-3"></i>
             <h5>Tratamiento Cerámico</h5>
-            <p>Protección avanzada con productos Gyeon y Meguiar’s.</p>
-            <span class="badge badge-precio text-light mb-2">$4500</span>
-            <button class="btn btn-outline-primary btn-sm" onclick="agregarServicio('Tratamiento Cerámico', 4500)">
+            <p>Protección avanzada con nanotecnología cerámica.</p>
+            <span class="badge badge-precio text-light mb-2">$4500</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Tratamiento Cerámico', 4500)">
               <i class="fas fa-cart-plus"></i> Agregar
             </button>
           </div>
@@ -165,10 +228,10 @@
     </div>
   </section>
 
-  <!-- CARRITO / COTIZADOR -->
+  <!-- COTIZADOR -->
   <section id="cotizador" class="py-5">
     <div class="container">
-      <h2 class="text-center mb-4 fw-bold">Cotización y Reserva</h2>
+      <h2 class="text-center mb-4 fw-bold text-light">Cotización y Reserva</h2>
       <div class="row justify-content-center">
         <div class="col-md-6" id="carritoResumen">
           <h5 class="mb-3"><i class="fas fa-shopping-cart"></i> Tu Cotización</h5>
@@ -198,10 +261,10 @@
   </section>
 
   <!-- MAPA -->
-  <section id="ubicacion" class="py-5 bg-light text-center">
+  <section id="ubicacion" class="py-5 text-center bg-dark">
     <div class="container">
       <h2 class="mb-4 fw-bold">Dónde Estamos</h2>
-      <p>📍 Av. Italia 3456, Montevideo, Uruguay</p>
+      <p class="text-secondary">📍 Av. Italia 3456, Montevideo, Uruguay</p>
       <div class="ratio ratio-16x9">
         <iframe
           src="https://www.google.com/maps?q=Av.+Italia+3456,+Montevideo,+Uruguay&output=embed"
@@ -218,12 +281,12 @@
         <i class="fab fa-instagram"></i>
         <a href="https://www.instagram.com/brillototal_detailing" target="_blank">@brillototal_detailing</a>
       </p>
-      <p>📍 Av. Italia 3456 | 🕗 Lunes a Sábado, 8:00 a 20:00</p>
+      <p>🕗 Lunes a Sábado, 8:00 a 20:00</p>
       <p>
         <i class="fab fa-whatsapp"></i>
         <a href="https://wa.me/59899654321" target="_blank">+598 99 654 321</a>
       </p>
-      <p class="text-muted small mb-0">&copy; 2025 Brillo Total Detailing</p>
+      <p class="text-secondary small mb-0">&copy; 2025 Brillo Total Detailing</p>
     </div>
   </footer>
 
@@ -244,7 +307,7 @@
       carrito.forEach((item, index) => {
         total += item.precio;
         const li = document.createElement('li');
-        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+        li.className = 'list-group-item d-flex justify-content-between align-items-center bg-transparent text-light';
         li.innerHTML = `
           ${item.nombre}
           <span>
@@ -270,7 +333,7 @@
       const nombre = document.getElementById('nombre').value;
       const auto = document.getElementById('auto').value;
       const fecha = document.getElementById('fecha').value;
-      const numeroWhatsApp = "59899654321"; // Número del negocio
+      const numeroWhatsApp = "59899654321";
 
       if (carrito.length === 0) {
         alert("Por favor, seleccioná al menos un servicio antes de enviar.");
