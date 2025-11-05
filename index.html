@@ -54,11 +54,29 @@
     #servicios .card {
       border: none;
       transition: all 0.3s ease;
+      border-radius: 15px;
     }
 
     #servicios .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    #servicios .price {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #198754;
+    }
+
+    .btn-cart {
+      background-color: #198754;
+      color: #fff;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-cart:hover {
+      background-color: #157347;
     }
 
     /* FORMULARIO */
@@ -90,7 +108,7 @@
     <div class="hero-content">
       <h1>Brillo Total Detailing</h1>
       <p class="lead">Lavado y Detailing Profesional en Montevideo</p>
-      <a href="#reserva" class="btn btn-primary btn-lg mt-3">Reservá tu turno</a>
+      <a href="#reserva" class="btn btn-primary btn-lg mt-3"><i class="fas fa-calendar-check"></i> Reservá tu turno</a>
     </div>
   </header>
 
@@ -111,34 +129,59 @@
     <div class="container">
       <h2 class="mb-4 fw-bold">Nuestros Servicios</h2>
       <div class="row g-4">
+        
+        <!-- Servicio 1 -->
         <div class="col-md-3">
-          <div class="card p-4">
+          <div class="card p-4 h-100">
             <i class="fas fa-car fa-3x mb-3 text-primary"></i>
             <h5>Lavado Express</h5>
-            <p>Rápido, práctico y eficiente para mantener tu auto impecable día a día.</p>
+            <p>Ideal para mantener tu vehículo limpio en poco tiempo.</p>
+            <p class="price">$600</p>
+            <button class="btn btn-cart w-100 mt-2">
+              <i class="fas fa-shopping-cart"></i> Reservar
+            </button>
           </div>
         </div>
+
+        <!-- Servicio 2 -->
         <div class="col-md-3">
-          <div class="card p-4">
+          <div class="card p-4 h-100">
             <i class="fas fa-hand-sparkles fa-3x mb-3 text-primary"></i>
             <h5>Lavado Premium</h5>
-            <p>Incluye limpieza exterior completa y aspirado interior profundo.</p>
+            <p>Limpieza exterior completa y aspirado interior profesional.</p>
+            <p class="price">$1.200</p>
+            <button class="btn btn-cart w-100 mt-2">
+              <i class="fas fa-shopping-cart"></i> Reservar
+            </button>
           </div>
         </div>
+
+        <!-- Servicio 3 -->
         <div class="col-md-3">
-          <div class="card p-4">
+          <div class="card p-4 h-100">
             <i class="fas fa-spray-can fa-3x mb-3 text-primary"></i>
             <h5>Detailing Completo</h5>
-            <p>Pulido, encerado y restauración de brillo profesional.</p>
+            <p>Pulido, encerado y restauración del brillo original de tu auto.</p>
+            <p class="price">$3.500</p>
+            <button class="btn btn-cart w-100 mt-2">
+              <i class="fas fa-shopping-cart"></i> Reservar
+            </button>
           </div>
         </div>
+
+        <!-- Servicio 4 -->
         <div class="col-md-3">
-          <div class="card p-4">
+          <div class="card p-4 h-100">
             <i class="fas fa-star fa-3x mb-3 text-primary"></i>
             <h5>Tratamiento Cerámico</h5>
-            <p>Protección avanzada con productos Gyeon y Meguiar’s.</p>
+            <p>Protección duradera con efecto espejo. Ideal para autos nuevos.</p>
+            <p class="price">$7.000</p>
+            <button class="btn btn-cart w-100 mt-2">
+              <i class="fas fa-shopping-cart"></i> Reservar
+            </button>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -160,10 +203,10 @@
           <label for="servicio" class="form-label">Servicio</label>
           <select id="servicio" class="form-select" required>
             <option value="" selected disabled>Seleccioná un servicio</option>
-            <option>Lavado Express</option>
-            <option>Lavado Premium</option>
-            <option>Detailing Completo</option>
-            <option>Tratamiento Cerámico</option>
+            <option>Lavado Express - $600</option>
+            <option>Lavado Premium - $1.200</option>
+            <option>Detailing Completo - $3.500</option>
+            <option>Tratamiento Cerámico - $7.000</option>
           </select>
         </div>
         <div class="mb-3">
