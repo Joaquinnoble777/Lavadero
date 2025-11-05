@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brillo Total Detailing | Lavadero Futurista</title>
+  <title>Brillo Total Detailing | Lavadero y Detailing Profesional</title>
+  <meta name="description" content="Brillo Total Detailing - Lavadero y detailing profesional en Montevideo. Lavado express, premium, cerámico y más." />
+  <meta name="keywords" content="lavadero, detailing, Montevideo, cerámico, autos, limpieza automotriz" />
+  <meta name="author" content="Brillo Total Detailing" />
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -11,151 +14,142 @@
   <script src="https://kit.fontawesome.com/a2b8e6d4d5.js" crossorigin="anonymous"></script>
 
   <style>
+    :root {
+      --color-principal: #00c3ff;
+      --color-secundario: #0077ff;
+      --color-fondo: #0a0a0a;
+      --vidrio: rgba(255, 255, 255, 0.08);
+      --borde: rgba(255, 255, 255, 0.2);
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #0d0d0d;
-      color: #e0e0e0;
+      font-family: "Poppins", sans-serif;
+      background-color: var(--color-fondo);
+      color: #fff;
       overflow-x: hidden;
-    }
-
-    /* GLOW TEXT */
-    h1, h2, h3, h5 {
-      color: #00e5ff;
-      text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
-    }
-
-    a, .btn-primary {
-      background: linear-gradient(90deg, #00e5ff, #007bff);
-      border: none;
-      box-shadow: 0 0 10px #00e5ff;
-    }
-
-    a:hover, .btn-primary:hover {
-      box-shadow: 0 0 20px #00e5ff;
-      background: linear-gradient(90deg, #007bff, #00e5ff);
     }
 
     /* HERO */
     .hero {
-      height: 90vh;
-      background: url('https://i.pinimg.com/originals/7a/3e/1e/7a3e1e5bfe80b540cc1f8b99673c1b20.jpg') center/cover no-repeat;
-      position: relative;
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.8)),
+        url('https://i0.wp.com/colorcity.com.uy/wp-content/uploads/2022/10/07-Etapa-de-Micropulido-Tratamiento-Zinc-Cross.jpg?fit=800%2C600&ssl=1') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
       text-align: center;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
+      backdrop-filter: blur(6px);
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.2);
+      animation: fadeIn 1.5s ease;
     }
 
     .hero h1 {
       font-weight: 800;
-      font-size: 3.5rem;
-      letter-spacing: 2px;
+      font-size: 3.2rem;
+      background: linear-gradient(90deg, #00c3ff, #0077ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #ddd;
+      margin-bottom: 25px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #00c3ff, #0077ff);
+      border: none;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00c3ff;
+    }
+
+    /* SOBRE NOSOTROS */
+    #nosotros {
+      background: #0e0e0e;
     }
 
     /* SERVICIOS */
     #servicios {
-      background: linear-gradient(180deg, #0b0b0b 0%, #141414 100%);
-      padding: 80px 0;
+      background: radial-gradient(circle at top, #0f0f0f, #000);
     }
 
     #servicios .card {
-      background: #111;
-      border: 1px solid rgba(0, 229, 255, 0.2);
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      color: #fff;
       transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
 
     #servicios .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
-    }
-
-    #servicios .precio {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #00e5ff;
-      text-shadow: 0 0 10px #00e5ff;
-      margin-top: 15px;
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0,195,255,0.3);
     }
 
     #servicios i {
-      color: #00e5ff;
-      text-shadow: 0 0 10px #00e5ff;
+      color: var(--color-principal);
+      text-shadow: 0 0 10px var(--color-principal);
     }
 
-    .btn-outline-primary {
-      border-color: #00e5ff;
-      color: #00e5ff;
+    .badge-precio {
+      background-color: var(--color-secundario);
     }
 
-    .btn-outline-primary:hover {
-      background-color: #00e5ff;
-      color: #000;
-      box-shadow: 0 0 15px #00e5ff;
+    /* CARRITO */
+    #carritoResumen {
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      padding: 25px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0,195,255,0.15);
     }
 
-    /* FORMULARIO Y CARRITO */
-    section {
-      padding: 80px 0;
-    }
-
-    #carrito, #reserva {
-      background: radial-gradient(circle at center, #0e0e0e 0%, #000 100%);
-      border-top: 1px solid rgba(0, 229, 255, 0.2);
-    }
-
-    .form-control, .form-select {
-      background: #1a1a1a;
+    input, select {
+      background-color: rgba(255, 255, 255, 0.05);
       color: #fff;
-      border: 1px solid #00e5ff;
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
-    .form-control:focus, .form-select:focus {
-      box-shadow: 0 0 15px #00e5ff;
-      border-color: #00e5ff;
-    }
-
-    #listaCarrito {
-      background: #111;
-      color: #fff;
-      border: 1px solid rgba(0, 229, 255, 0.3);
-      box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
-    }
-
-    /* MAPA */
-    #ubicacion {
-      background: #0b0b0b;
+    input:focus, select:focus {
+      border-color: var(--color-principal);
+      box-shadow: 0 0 8px var(--color-principal);
+      background-color: rgba(255, 255, 255, 0.08);
     }
 
     /* FOOTER */
     footer {
       background: #000;
-      color: #00e5ff;
-      padding: 30px 0;
-      text-shadow: 0 0 10px #00e5ff;
+      border-top: 1px solid var(--borde);
+      padding: 40px 0;
     }
 
     footer a {
-      color: #00e5ff;
+      color: var(--color-principal);
       text-decoration: none;
     }
 
     footer a:hover {
       text-decoration: underline;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -165,116 +159,117 @@
   <header class="hero">
     <div class="hero-content">
       <h1>Brillo Total Detailing</h1>
-      <p class="lead">Tecnología y precisión para tu vehículo</p>
-      <a href="#reserva" class="btn btn-primary btn-lg mt-3">Reservá tu turno</a>
+      <p class="lead">Experiencia Automotriz Profesional &amp; Futurista</p>
+      <a href="#cotizador" class="btn btn-primary btn-lg mt-3">Cotizá tu servicio</a>
     </div>
   </header>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="text-center">
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="py-5 text-center">
     <div class="container">
-      <h2 class="fw-bold mb-5">Nuestros Servicios</h2>
-      <div class="row g-4">
+      <h2 class="mb-4 fw-bold text-light">Sobre Nosotros</h2>
+      <p class="col-md-8 mx-auto text-secondary">
+        Somos especialistas en estética automotriz avanzada. Ofrecemos resultados de alto impacto
+        con tecnología, precisión y pasión por el detalle. Productos premium, procesos certificados y atención personalizada.
+      </p>
+    </div>
+  </section>
 
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-4 fw-bold">Nuestros Servicios</h2>
+      <div class="row g-4">
         <div class="col-md-3">
           <div class="card p-4">
             <i class="fas fa-car fa-3x mb-3"></i>
             <h5>Lavado Express</h5>
-            <p>Rápido y eficiente. Ideal para mantener el brillo diario.</p>
-            <p class="precio">$500</p>
-            <button class="btn btn-outline-primary btn-sm mt-2">Agregar al carrito</button>
+            <p>Ideal para mantener tu vehículo limpio día a día.</p>
+            <span class="badge badge-precio text-light mb-2">$600</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Lavado Express', 600)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
           </div>
         </div>
-
         <div class="col-md-3">
           <div class="card p-4">
             <i class="fas fa-hand-sparkles fa-3x mb-3"></i>
             <h5>Lavado Premium</h5>
-            <p>Exterior completo + aspirado interior profundo.</p>
-            <p class="precio">$900</p>
-            <button class="btn btn-outline-primary btn-sm mt-2">Agregar al carrito</button>
+            <p>Limpieza profunda interior y exterior con acabado profesional.</p>
+            <span class="badge badge-precio text-light mb-2">$900</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Lavado Premium', 900)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
           </div>
         </div>
-
         <div class="col-md-3">
           <div class="card p-4">
             <i class="fas fa-spray-can fa-3x mb-3"></i>
             <h5>Detailing Completo</h5>
-            <p>Pulido, encerado y restauración del brillo total.</p>
-            <p class="precio">$2500</p>
-            <button class="btn btn-outline-primary btn-sm mt-2">Agregar al carrito</button>
+            <p>Restauración, pulido y encerado con brillo espejo.</p>
+            <span class="badge badge-precio text-light mb-2">$2500</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Detailing Completo', 2500)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
           </div>
         </div>
-
         <div class="col-md-3">
           <div class="card p-4">
             <i class="fas fa-star fa-3x mb-3"></i>
             <h5>Tratamiento Cerámico</h5>
-            <p>Protección avanzada con Gyeon y Meguiar’s.</p>
-            <p class="precio">$4500</p>
-            <button class="btn btn-outline-primary btn-sm mt-2">Agregar al carrito</button>
+            <p>Protección avanzada con nanotecnología cerámica.</p>
+            <span class="badge badge-precio text-light mb-2">$4500</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Tratamiento Cerámico', 4500)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CARRITO / COTIZADOR -->
-  <section id="carrito" class="text-center text-light">
+  <!-- COTIZADOR -->
+  <section id="cotizador" class="py-5">
     <div class="container">
-      <h2 class="fw-bold mb-4">Tu Cotización</h2>
-      <div id="listaCarrito" class="col-md-6 mx-auto rounded p-4 mb-3">
-        <p class="text-muted">No hay servicios agregados aún.</p>
-      </div>
-      <h4 class="fw-bold">Total: $<span id="total">0</span></h4>
-      <button class="btn btn-primary mt-3" id="btnEnviarCotizacion">
-        <i class="fab fa-whatsapp"></i> Enviar cotización por WhatsApp
-      </button>
-    </div>
-  </section>
+      <h2 class="text-center mb-4 fw-bold text-light">Cotización y Reserva</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6" id="carritoResumen">
+          <h5 class="mb-3"><i class="fas fa-shopping-cart"></i> Tu Cotización</h5>
+          <ul id="listaServicios" class="list-group mb-3"></ul>
+          <h5>Total: <span id="total" class="fw-bold">$0</span></h5>
 
-  <!-- FORMULARIO DE RESERVA -->
-  <section id="reserva" class="text-center text-light">
-    <div class="container">
-      <h2 class="fw-bold mb-4">Reservá tu Turno</h2>
-      <form id="formReserva" class="col-md-6 mx-auto">
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Tu nombre</label>
-          <input type="text" id="nombre" class="form-control" required />
+          <form id="formReserva" class="mt-4">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Tu nombre</label>
+              <input type="text" id="nombre" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="auto" class="form-label">Modelo del auto</label>
+              <input type="text" id="auto" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="fecha" class="form-label">Fecha y hora</label>
+              <input type="datetime-local" id="fecha" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-success w-100">
+              <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+            </button>
+          </form>
         </div>
-        <div class="mb-3">
-          <label for="auto" class="form-label">Modelo del auto</label>
-          <input type="text" id="auto" class="form-control" required />
-        </div>
-        <div class="mb-3">
-          <label for="servicio" class="form-label">Servicio</label>
-          <select id="servicio" class="form-select" required>
-            <option value="" selected disabled>Seleccioná un servicio</option>
-            <option>Lavado Express</option>
-            <option>Lavado Premium</option>
-            <option>Detailing Completo</option>
-            <option>Tratamiento Cerámico</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="fecha" class="form-label">Fecha y hora</label>
-          <input type="datetime-local" id="fecha" class="form-control" required />
-        </div>
-        <button type="submit" class="btn btn-primary w-100">
-          <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
-        </button>
-      </form>
+      </div>
     </div>
   </section>
 
   <!-- MAPA -->
-  <section id="ubicacion" class="text-center text-light">
+  <section id="ubicacion" class="py-5 text-center bg-dark">
     <div class="container">
-      <h2 class="fw-bold mb-4">Dónde Estamos</h2>
-      <p>Av. Italia 3456, Montevideo, Uruguay</p>
-      <div class="ratio ratio-16x9 border border-info rounded shadow">
-        <iframe src="https://www.google.com/maps?q=Av.+Italia+3456,+Montevideo,+Uruguay&output=embed" allowfullscreen></iframe>
+      <h2 class="mb-4 fw-bold">Dónde Estamos</h2>
+      <p class="text-secondary">📍 Av. Italia 3456, Montevideo, Uruguay</p>
+      <div class="ratio ratio-16x9">
+        <iframe
+          src="https://www.google.com/maps?q=Av.+Italia+3456,+Montevideo,+Uruguay&output=embed"
+          style="border:0;" loading="lazy" allowfullscreen>
+        </iframe>
       </div>
     </div>
   </section>
@@ -282,91 +277,77 @@
   <!-- FOOTER -->
   <footer class="text-center">
     <div class="container">
-      <p>
+      <p class="mb-1">
         <i class="fab fa-instagram"></i>
         <a href="https://www.instagram.com/brillototal_detailing" target="_blank">@brillototal_detailing</a>
       </p>
-      <p>📍 Av. Italia 3456 | 🕗 Lunes a Sábado, 8:00 a 20:00</p>
+      <p>🕗 Lunes a Sábado, 8:00 a 20:00</p>
       <p>
         <i class="fab fa-whatsapp"></i>
         <a href="https://wa.me/59899654321" target="_blank">+598 99 654 321</a>
       </p>
-      <p class="small">&copy; 2025 Brillo Total Detailing</p>
+      <p class="text-secondary small mb-0">&copy; 2025 Brillo Total Detailing</p>
     </div>
   </footer>
 
   <!-- JS -->
   <script>
-    // Carrito simple
     const carrito = [];
-    const totalEl = document.getElementById('total');
-    const listaCarrito = document.getElementById('listaCarrito');
 
-    document.querySelectorAll('#servicios .btn').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const card = btn.closest('.card');
-        const nombre = card.querySelector('h5').textContent;
-        const precio = parseInt(card.querySelector('.precio').textContent.replace('$', ''));
+    function agregarServicio(nombre, precio) {
+      carrito.push({ nombre, precio });
+      actualizarResumen();
+    }
 
-        carrito.push({ nombre, precio });
-        actualizarCarrito();
-      });
-    });
-
-    function actualizarCarrito() {
-      listaCarrito.innerHTML = '';
+    function actualizarResumen() {
+      const lista = document.getElementById('listaServicios');
+      lista.innerHTML = '';
       let total = 0;
 
       carrito.forEach((item, index) => {
         total += item.precio;
-        const div = document.createElement('div');
-        div.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'mb-2');
-        div.innerHTML = `
-          <span>${item.nombre}</span>
-          <strong>$${item.precio}</strong>
-          <button class="btn btn-sm btn-danger" onclick="eliminarItem(${index})">✕</button>
-        `;
-        listaCarrito.appendChild(div);
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center bg-transparent text-light';
+        li.innerHTML = `
+          ${item.nombre}
+          <span>
+            $${item.precio}
+            <button class="btn btn-sm btn-danger ms-2" onclick="eliminarServicio(${index})">
+              <i class="fas fa-trash"></i>
+            </button>
+          </span>`;
+        lista.appendChild(li);
       });
 
-      totalEl.textContent = total;
-      if (carrito.length === 0) listaCarrito.innerHTML = '<p class="text-muted">No hay servicios agregados aún.</p>';
+      document.getElementById('total').textContent = `$${total}`;
     }
 
-    function eliminarItem(index) {
+    function eliminarServicio(index) {
       carrito.splice(index, 1);
-      actualizarCarrito();
+      actualizarResumen();
     }
 
-    document.getElementById('btnEnviarCotizacion').addEventListener('click', () => {
-      if (carrito.length === 0) return alert('Agregá al menos un servicio.');
-
-      const numeroWhatsApp = "59899654321";
-      const texto = carrito.map(item => `• ${item.nombre} - $${item.precio}`).join('%0A');
-      const total = carrito.reduce((acc, item) => acc + item.precio, 0);
-      const mensaje = `Hola! Quiero una cotización:%0A${texto}%0A%0ATotal: $${total}`;
-      window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, "_blank");
-    });
-
-    // Formulario reserva
     document.getElementById('formReserva').addEventListener('submit', function (e) {
       e.preventDefault();
 
       const nombre = document.getElementById('nombre').value;
       const auto = document.getElementById('auto').value;
-      const servicio = document.getElementById('servicio').value;
       const fecha = document.getElementById('fecha').value;
-
       const numeroWhatsApp = "59899654321";
 
-      const mensaje = `¡Hola! Quiero reservar un turno para *${servicio}*.%0A
-Nombre: ${nombre}%0A
-Auto: ${auto}%0A
-Fecha: ${fecha}`;
+      if (carrito.length === 0) {
+        alert("Por favor, seleccioná al menos un servicio antes de enviar.");
+        return;
+      }
 
+      const listaServicios = carrito.map(item => `• ${item.nombre} - $${item.precio}`).join('%0A');
+      const total = carrito.reduce((acc, item) => acc + item.precio, 0);
+
+      const mensaje = `¡Hola! Quiero reservar los siguientes servicios:%0A${listaServicios}%0A%0ATotal: $${total}%0A%0ANombre: ${nombre}%0AAuto: ${auto}%0AFecha: ${fecha}`;
       const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
       window.open(url, "_blank");
     });
   </script>
+
 </body>
 </html>
