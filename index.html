@@ -22,9 +22,6 @@
       --borde: rgba(255, 255, 255, 0.2);
     }
 
-
-
-
     body {
       font-family: "Poppins", sans-serif;
       background-color: var(--color-fondo);
@@ -108,12 +105,12 @@
     }
 
     .badge-precio {
-  background-color: var(--color-secundario);
-  font-size: 1.2rem; /* Aumenta el tamaño del texto */
-  padding: 8px 16px; /* Más espacio interno */
-  border-radius: 12px; /* Bordes más redondeados */
-}
-
+      background-color: var(--color-secundario);
+      font-size: 1.3rem;
+      padding: 10px 18px;
+      border-radius: 14px;
+      box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+    }
 
     /* CARRITO */
     #carritoResumen {
@@ -153,6 +150,18 @@
       text-decoration: underline;
     }
 
+    .social-icons a {
+      color: var(--color-principal);
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--color-secundario);
+      transform: scale(1.2);
+      text-shadow: 0 0 10px var(--color-principal);
+    }
+
     /* Animaciones */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
@@ -180,23 +189,6 @@
         con tecnología, precisión y pasión por el detalle. Productos premium, procesos certificados y atención personalizada.
       </p>
     </div>
-      <div class="social-icons mt-3">
-  <a href="https://www.instagram.com/brillototal_detailing" target="_blank" class="me-3">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://www.facebook.com/brillototal_detailing" target="_blank" class="me-3">
-    <i class="fab fa-facebook"></i>
-  </a>
-  <a href="https://wa.me/59899654321" target="_blank" class="me-3">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://www.tiktok.com/@brillototal_detailing" target="_blank" class="me-3">
-    <i class="fab fa-tiktok"></i>
-  </a>
-  <a href="https://maps.google.com/?q=Av.+Italia+3456,+Montevideo,+Uruguay" target="_blank">
-    <i class="fas fa-map-marker-alt"></i>
-  </a>
-</div>
   </section>
 
   <!-- SERVICIOS -->
@@ -301,18 +293,27 @@
   <!-- FOOTER -->
   <footer class="text-center">
     <div class="container">
-      <p class="mb-1">
-        <i class="fab fa-instagram"></i>
-        <a href="https://www.instagram.com/brillototal_detailing" target="_blank">@brillototal_detailing</a>
-      </p>
+      <h5 class="fw-bold mb-3 text-light">Seguinos en nuestras redes</h5>
+      <div class="social-icons mb-4">
+        <a href="https://www.instagram.com/brillototal_detailing" target="_blank" class="me-3">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/brillototal_detailing" target="_blank" class="me-3">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://wa.me/59899654321" target="_blank" class="me-3">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.tiktok.com/@brillototal_detailing" target="_blank" class="me-3">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://maps.google.com/?q=Av.+Italia+3456,+Montevideo,+Uruguay" target="_blank">
+          <i class="fas fa-map-marker-alt"></i>
+        </a>
+      </div>
       <p>🕗 Lunes a Sábado, 8:00 a 20:00</p>
-      <p>
-        <i class="fab fa-whatsapp"></i>
-        <a href="https://wa.me/59899654321" target="_blank">+598 99 654 321</a>
-      </p>
       <p class="text-secondary small mb-0">&copy; 2025 Brillo Total Detailing</p>
     </div>
-
   </footer>
 
   <!-- JS -->
