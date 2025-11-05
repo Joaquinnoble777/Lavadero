@@ -1,185 +1,378 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lavadero AP Motors | Detailing & Lavado Profesional</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brillo Total Detailing | Lavadero y Detailing Profesional</title>
+  <meta name="description" content="Brillo Total Detailing - Lavadero y detailing profesional en Montevideo. Lavado express, premium, cerámico y más." />
+  <meta name="keywords" content="lavadero, detailing, Montevideo, cerámico, autos, limpieza automotriz" />
+  <meta name="author" content="Brillo Total Detailing" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Iconos -->
+  <script src="https://kit.fontawesome.com/a2b8e6d4d5.js" crossorigin="anonymous"></script>
+
   <style>
     :root {
-      --color-principal: #00b4d8;
-      --color-secundario: #0077b6;
-      --color-fondo: #f8f9fa;
-      --color-texto: #333;
+      --color-principal: #00c3ff;
+      --color-secundario: #0077ff;
+      --color-fondo: #0a0a0a;
+      --vidrio: rgba(255, 255, 255, 0.08);
+      --borde: rgba(255, 255, 255, 0.2);
     }
+
+
+
 
     body {
       font-family: "Poppins", sans-serif;
-      margin: 0;
       background-color: var(--color-fondo);
-      color: var(--color-texto);
-      scroll-behavior: smooth;
+      color: #fff;
+      overflow-x: hidden;
     }
 
-    header {
-      background-color: var(--color-secundario);
-      color: white;
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.8)),
+        url('https://i0.wp.com/colorcity.com.uy/wp-content/uploads/2022/10/07-Etapa-de-Micropulido-Tratamiento-Zinc-Cross.jpg?fit=800%2C600&ssl=1') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 2rem 1rem;
+      color: #fff;
     }
 
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+    .hero-content {
+      backdrop-filter: blur(6px);
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.2);
+      animation: fadeIn 1.5s ease;
     }
 
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
+    .hero h1 {
+      font-weight: 800;
+      font-size: 3.2rem;
+      background: linear-gradient(90deg, #00c3ff, #0077ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    section {
-      padding: 3rem 1rem;
-      max-width: 1200px;
-      margin: auto;
+    .hero p {
+      color: #ddd;
+      margin-bottom: 25px;
     }
 
-    h2 {
-      text-align: center;
-      color: var(--color-secundario);
-      margin-bottom: 2rem;
+    .btn-primary {
+      background: linear-gradient(90deg, #00c3ff, #0077ff);
+      border: none;
+      transition: 0.3s ease;
     }
 
-    .servicios {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00c3ff;
     }
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.3s ease;
+    /* SOBRE NOSOTROS */
+    #nosotros {
+      background: #0e0e0e;
     }
 
-    .card:hover {
-      transform: scale(1.03);
+    /* SERVICIOS */
+    #servicios {
+      background: radial-gradient(circle at top, #0f0f0f, #000);
     }
 
-    .card i {
-      font-size: 2.5rem;
-      color: var(--color-principal);
-      margin-bottom: 1rem;
-    }
-
-    .badge-precio {
-      background-color: var(--color-secundario);
-      font-size: 1.3rem;
-      padding: 10px 18px;
-      border-radius: 14px;
-      color: white;
-      display: inline-block;
-      margin-top: 1rem;
-      box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
-    }
-
-    footer {
-      background-color: var(--color-secundario);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-    }
-
-    .social-icons a {
-      color: white;
-      font-size: 1.8rem;
-      margin: 0 10px;
+    #servicios .card {
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      color: #fff;
       transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
 
-    .social-icons a:hover {
+    #servicios .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0,195,255,0.3);
+    }
+
+    #servicios i {
       color: var(--color-principal);
-      transform: scale(1.2);
       text-shadow: 0 0 10px var(--color-principal);
     }
 
-    .btn-whatsapp {
-      display: inline-block;
-      background-color: #25D366;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 20px;
-      transition: all 0.3s ease;
+    .badge-precio {
+  background-color: var(--color-secundario);
+  font-size: 1.2rem; /* Aumenta el tamaño del texto */
+  padding: 8px 16px; /* Más espacio interno */
+  border-radius: 12px; /* Bordes más redondeados */
+}
+
+
+    /* CARRITO */
+    #carritoResumen {
+      background: var(--vidrio);
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      padding: 25px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0,195,255,0.15);
     }
 
-    .btn-whatsapp:hover {
-      background-color: #1EBE5B;
-      transform: scale(1.05);
+    input, select {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    input:focus, select:focus {
+      border-color: var(--color-principal);
+      box-shadow: 0 0 8px var(--color-principal);
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      border-top: 1px solid var(--borde);
+      padding: 40px 0;
+    }
+
+    footer a {
+      color: var(--color-principal);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Lavadero AP Motors</h1>
-    <p>Detailing & Lavado Profesional en Ciudad 18 de Mayo</p>
-    <a href="https://wa.me/59899946914" target="_blank" class="btn-whatsapp">
-      <i class="fab fa-whatsapp"></i> Reservá tu turno
-    </a>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Brillo Total Detailing</h1>
+      <p class="lead">Experiencia Automotriz Profesional &amp; Futurista</p>
+      <a href="#cotizador" class="btn btn-primary btn-lg mt-3">Cotizá tu servicio</a>
+    </div>
   </header>
 
-  <section id="servicios">
-    <h2>Nuestros Servicios</h2>
-    <div class="servicios">
-      <div class="card">
-        <i class="fas fa-car-side"></i>
-        <h3>Lavado Completo</h3>
-        <p>Exterior e interior con productos premium y terminación a mano.</p>
-        <span class="badge-precio">$800</span>
-      </div>
-      <div class="card">
-        <i class="fas fa-spray-can"></i>
-        <h3>Encerado y Brillo</h3>
-        <p>Protección avanzada con cera de alta duración y acabado espejo.</p>
-        <span class="badge-precio">$1200</span>
-      </div>
-      <div class="card">
-        <i class="fas fa-pump-soap"></i>
-        <h3>Detailing Interior</h3>
-        <p>Limpieza profunda de tapizados, plásticos y paneles.</p>
-        <span class="badge-precio">$2000</span>
-      </div>
-      <div class="card">
-        <i class="fas fa-water"></i>
-        <h3>Lavado Express</h3>
-        <p>Ideal para mantener tu vehículo impecable en poco tiempo.</p>
-        <span class="badge-precio">$500</span>
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-4 fw-bold text-light">Sobre Nosotros</h2>
+      <p class="col-md-8 mx-auto text-secondary">
+        Somos especialistas en estética automotriz avanzada. Ofrecemos resultados de alto impacto
+        con tecnología, precisión y pasión por el detalle. Productos premium, procesos certificados y atención personalizada.
+      </p>
+    </div>
+      <div class="social-icons mt-3">
+  <a href="https://www.instagram.com/brillototal_detailing" target="_blank" class="me-3">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.facebook.com/brillototal_detailing" target="_blank" class="me-3">
+    <i class="fab fa-facebook"></i>
+  </a>
+  <a href="https://wa.me/59899654321" target="_blank" class="me-3">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.tiktok.com/@brillototal_detailing" target="_blank" class="me-3">
+    <i class="fab fa-tiktok"></i>
+  </a>
+  <a href="https://maps.google.com/?q=Av.+Italia+3456,+Montevideo,+Uruguay" target="_blank">
+    <i class="fas fa-map-marker-alt"></i>
+  </a>
+</div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-4 fw-bold">Nuestros Servicios</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card p-4">
+            <i class="fas fa-car fa-3x mb-3"></i>
+            <h5>Lavado Express</h5>
+            <p>Ideal para mantener tu vehículo limpio día a día.</p>
+            <span class="badge badge-precio text-light mb-2">$600</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Lavado Express', 600)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-4">
+            <i class="fas fa-hand-sparkles fa-3x mb-3"></i>
+            <h5>Lavado Premium</h5>
+            <p>Limpieza profunda interior y exterior con acabado profesional.</p>
+            <span class="badge badge-precio text-light mb-2">$900</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Lavado Premium', 900)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-4">
+            <i class="fas fa-spray-can fa-3x mb-3"></i>
+            <h5>Detailing Completo</h5>
+            <p>Restauración, pulido y encerado con brillo espejo.</p>
+            <span class="badge badge-precio text-light mb-2">$2500</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Detailing Completo', 2500)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-4">
+            <i class="fas fa-star fa-3x mb-3"></i>
+            <h5>Tratamiento Cerámico</h5>
+            <p>Protección avanzada con nanotecnología cerámica.</p>
+            <span class="badge badge-precio text-light mb-2">$4500</span><br>
+            <button class="btn btn-outline-primary btn-sm mt-2" onclick="agregarServicio('Tratamiento Cerámico', 4500)">
+              <i class="fas fa-cart-plus"></i> Agregar
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <h3>Lavadero AP Motors</h3>
-    <p>Ciudad 18 de Mayo | Tel: <a href="tel:099946914" style="color:white; text-decoration: underline;">099 946 914</a></p>
-    <p><a href="https://www.google.com/maps/place/34%C2%B041'58.2%22S+56%C2%B012'46.7%22W/@-34.699492,-56.2136257,19z/data=!3m1!4b1!4m4!3m3!8m2!3d-34.699492!4d-56.212982" target="_blank" style="color:white; text-decoration:underline;">Ver ubicación en Google Maps</a></p>
+  <!-- COTIZADOR -->
+  <section id="cotizador" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4 fw-bold text-light">Cotización y Reserva</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6" id="carritoResumen">
+          <h5 class="mb-3"><i class="fas fa-shopping-cart"></i> Tu Cotización</h5>
+          <ul id="listaServicios" class="list-group mb-3"></ul>
+          <h5>Total: <span id="total" class="fw-bold">$0</span></h5>
 
-    <div class="social-icons mt-3">
-      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://wa.me/59899946914" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.google.com/maps/place/34%C2%B041'58.2%22S+56%C2%B012'46.7%22W/@-34.699492,-56.2136257,19z/data=!3m1!4b1!4m4!3m3!8m2!3d-34.699492!4d-56.212982" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+          <form id="formReserva" class="mt-4">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Tu nombre</label>
+              <input type="text" id="nombre" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="auto" class="form-label">Modelo del auto</label>
+              <input type="text" id="auto" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="fecha" class="form-label">Fecha y hora</label>
+              <input type="datetime-local" id="fecha" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-success w-100">
+              <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section id="ubicacion" class="py-5 text-center bg-dark">
+    <div class="container">
+      <h2 class="mb-4 fw-bold">Dónde Estamos</h2>
+      <p class="text-secondary">📍 Av. Italia 3456, Montevideo, Uruguay</p>
+      <div class="ratio ratio-16x9">
+        <iframe
+          src="https://www.google.com/maps?q=Av.+Italia+3456,+Montevideo,+Uruguay&output=embed"
+          style="border:0;" loading="lazy" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-1">
+        <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/brillototal_detailing" target="_blank">@brillototal_detailing</a>
+      </p>
+      <p>🕗 Lunes a Sábado, 8:00 a 20:00</p>
+      <p>
+        <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/59899654321" target="_blank">+598 99 654 321</a>
+      </p>
+      <p class="text-secondary small mb-0">&copy; 2025 Brillo Total Detailing</p>
     </div>
 
-    <p style="margin-top: 1rem; opacity: 0.8;">© 2025 Lavadero AP Motors - Todos los derechos reservados</p>
   </footer>
+
+  <!-- JS -->
+  <script>
+    const carrito = [];
+
+    function agregarServicio(nombre, precio) {
+      carrito.push({ nombre, precio });
+      actualizarResumen();
+    }
+
+    function actualizarResumen() {
+      const lista = document.getElementById('listaServicios');
+      lista.innerHTML = '';
+      let total = 0;
+
+      carrito.forEach((item, index) => {
+        total += item.precio;
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center bg-transparent text-light';
+        li.innerHTML = `
+          ${item.nombre}
+          <span>
+            $${item.precio}
+            <button class="btn btn-sm btn-danger ms-2" onclick="eliminarServicio(${index})">
+              <i class="fas fa-trash"></i>
+            </button>
+          </span>`;
+        lista.appendChild(li);
+      });
+
+      document.getElementById('total').textContent = `$${total}`;
+    }
+
+    function eliminarServicio(index) {
+      carrito.splice(index, 1);
+      actualizarResumen();
+    }
+
+    document.getElementById('formReserva').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const auto = document.getElementById('auto').value;
+      const fecha = document.getElementById('fecha').value;
+      const numeroWhatsApp = "59899654321";
+
+      if (carrito.length === 0) {
+        alert("Por favor, seleccioná al menos un servicio antes de enviar.");
+        return;
+      }
+
+      const listaServicios = carrito.map(item => `• ${item.nombre} - $${item.precio}`).join('%0A');
+      const total = carrito.reduce((acc, item) => acc + item.precio, 0);
+
+      const mensaje = `¡Hola! Quiero reservar los siguientes servicios:%0A${listaServicios}%0A%0ATotal: $${total}%0A%0ANombre: ${nombre}%0AAuto: ${auto}%0AFecha: ${fecha}`;
+      const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+      window.open(url, "_blank");
+    });
+  </script>
 
 </body>
 </html>
