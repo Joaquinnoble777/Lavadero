@@ -54,34 +54,11 @@
     #servicios .card {
       border: none;
       transition: all 0.3s ease;
-      border-radius: 15px;
     }
 
     #servicios .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    #servicios .price {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #198754;
-    }
-
-    .btn-cart {
-      background-color: #198754;
-      color: #fff;
-      border: none;
-      transition: all 0.3s ease;
-    }
-
-    .btn-cart:hover {
-      background-color: #157347;
-    }
-
-    /* FORMULARIO */
-    #reserva {
-      background-color: #f8f9fa;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     /* FOOTER */
@@ -99,6 +76,17 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* CARRITO */
+    #carritoResumen {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .badge-precio {
+      background-color: #007bff;
+    }
   </style>
 </head>
 <body>
@@ -108,7 +96,7 @@
     <div class="hero-content">
       <h1>Brillo Total Detailing</h1>
       <p class="lead">Lavado y Detailing Profesional en Montevideo</p>
-      <a href="#reserva" class="btn btn-primary btn-lg mt-3"><i class="fas fa-calendar-check"></i> Reservá tu turno</a>
+      <a href="#reserva" class="btn btn-primary btn-lg mt-3">Reservá tu turno</a>
     </div>
   </header>
 
@@ -129,94 +117,83 @@
     <div class="container">
       <h2 class="mb-4 fw-bold">Nuestros Servicios</h2>
       <div class="row g-4">
-        
-        <!-- Servicio 1 -->
         <div class="col-md-3">
-          <div class="card p-4 h-100">
+          <div class="card p-4">
             <i class="fas fa-car fa-3x mb-3 text-primary"></i>
             <h5>Lavado Express</h5>
-            <p>Ideal para mantener tu vehículo limpio en poco tiempo.</p>
-            <p class="price">$600</p>
-            <button class="btn btn-cart w-100 mt-2">
-              <i class="fas fa-shopping-cart"></i> Reservar
+            <p>Rápido, práctico y eficiente para mantener tu auto impecable día a día.</p>
+            <span class="badge badge-precio text-light mb-2">$600</span>
+            <button class="btn btn-outline-primary btn-sm" onclick="agregarServicio('Lavado Express', 600)">
+              <i class="fas fa-cart-plus"></i> Agregar
             </button>
           </div>
         </div>
-
-        <!-- Servicio 2 -->
         <div class="col-md-3">
-          <div class="card p-4 h-100">
+          <div class="card p-4">
             <i class="fas fa-hand-sparkles fa-3x mb-3 text-primary"></i>
             <h5>Lavado Premium</h5>
-            <p>Limpieza exterior completa y aspirado interior profesional.</p>
-            <p class="price">$1.200</p>
-            <button class="btn btn-cart w-100 mt-2">
-              <i class="fas fa-shopping-cart"></i> Reservar
+            <p>Incluye limpieza exterior completa y aspirado interior profundo.</p>
+            <span class="badge badge-precio text-light mb-2">$900</span>
+            <button class="btn btn-outline-primary btn-sm" onclick="agregarServicio('Lavado Premium', 900)">
+              <i class="fas fa-cart-plus"></i> Agregar
             </button>
           </div>
         </div>
-
-        <!-- Servicio 3 -->
         <div class="col-md-3">
-          <div class="card p-4 h-100">
+          <div class="card p-4">
             <i class="fas fa-spray-can fa-3x mb-3 text-primary"></i>
             <h5>Detailing Completo</h5>
-            <p>Pulido, encerado y restauración del brillo original de tu auto.</p>
-            <p class="price">$3.500</p>
-            <button class="btn btn-cart w-100 mt-2">
-              <i class="fas fa-shopping-cart"></i> Reservar
+            <p>Pulido, encerado y restauración de brillo profesional.</p>
+            <span class="badge badge-precio text-light mb-2">$2500</span>
+            <button class="btn btn-outline-primary btn-sm" onclick="agregarServicio('Detailing Completo', 2500)">
+              <i class="fas fa-cart-plus"></i> Agregar
             </button>
           </div>
         </div>
-
-        <!-- Servicio 4 -->
         <div class="col-md-3">
-          <div class="card p-4 h-100">
+          <div class="card p-4">
             <i class="fas fa-star fa-3x mb-3 text-primary"></i>
             <h5>Tratamiento Cerámico</h5>
-            <p>Protección duradera con efecto espejo. Ideal para autos nuevos.</p>
-            <p class="price">$7.000</p>
-            <button class="btn btn-cart w-100 mt-2">
-              <i class="fas fa-shopping-cart"></i> Reservar
+            <p>Protección avanzada con productos Gyeon y Meguiar’s.</p>
+            <span class="badge badge-precio text-light mb-2">$4500</span>
+            <button class="btn btn-outline-primary btn-sm" onclick="agregarServicio('Tratamiento Cerámico', 4500)">
+              <i class="fas fa-cart-plus"></i> Agregar
             </button>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- FORMULARIO DE RESERVA -->
-  <section id="reserva" class="py-5">
+  <!-- CARRITO / COTIZADOR -->
+  <section id="cotizador" class="py-5">
     <div class="container">
-      <h2 class="text-center mb-4 fw-bold">Reservá tu Turno</h2>
-      <form id="formReserva" class="col-md-6 mx-auto">
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Tu nombre</label>
-          <input type="text" id="nombre" class="form-control" required />
+      <h2 class="text-center mb-4 fw-bold">Cotización y Reserva</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6" id="carritoResumen">
+          <h5 class="mb-3"><i class="fas fa-shopping-cart"></i> Tu Cotización</h5>
+          <ul id="listaServicios" class="list-group mb-3"></ul>
+          <h5>Total: <span id="total" class="fw-bold">$0</span></h5>
+
+          <form id="formReserva" class="mt-4">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Tu nombre</label>
+              <input type="text" id="nombre" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="auto" class="form-label">Modelo del auto</label>
+              <input type="text" id="auto" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="fecha" class="form-label">Fecha y hora</label>
+              <input type="datetime-local" id="fecha" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-success w-100">
+              <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+            </button>
+          </form>
         </div>
-        <div class="mb-3">
-          <label for="auto" class="form-label">Modelo del auto</label>
-          <input type="text" id="auto" class="form-control" required />
-        </div>
-        <div class="mb-3">
-          <label for="servicio" class="form-label">Servicio</label>
-          <select id="servicio" class="form-select" required>
-            <option value="" selected disabled>Seleccioná un servicio</option>
-            <option>Lavado Express - $600</option>
-            <option>Lavado Premium - $1.200</option>
-            <option>Detailing Completo - $3.500</option>
-            <option>Tratamiento Cerámico - $7.000</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="fecha" class="form-label">Fecha y hora</label>
-          <input type="datetime-local" id="fecha" class="form-control" required />
-        </div>
-        <button type="submit" class="btn btn-success w-100">
-          <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
-        </button>
-      </form>
+      </div>
     </div>
   </section>
 
@@ -250,23 +227,60 @@
     </div>
   </footer>
 
-  <!-- JS FORMULARIO -->
+  <!-- JS -->
   <script>
+    const carrito = [];
+
+    function agregarServicio(nombre, precio) {
+      carrito.push({ nombre, precio });
+      actualizarResumen();
+    }
+
+    function actualizarResumen() {
+      const lista = document.getElementById('listaServicios');
+      lista.innerHTML = '';
+      let total = 0;
+
+      carrito.forEach((item, index) => {
+        total += item.precio;
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+        li.innerHTML = `
+          ${item.nombre}
+          <span>
+            $${item.precio}
+            <button class="btn btn-sm btn-danger ms-2" onclick="eliminarServicio(${index})">
+              <i class="fas fa-trash"></i>
+            </button>
+          </span>`;
+        lista.appendChild(li);
+      });
+
+      document.getElementById('total').textContent = `$${total}`;
+    }
+
+    function eliminarServicio(index) {
+      carrito.splice(index, 1);
+      actualizarResumen();
+    }
+
     document.getElementById('formReserva').addEventListener('submit', function (e) {
       e.preventDefault();
 
       const nombre = document.getElementById('nombre').value;
       const auto = document.getElementById('auto').value;
-      const servicio = document.getElementById('servicio').value;
       const fecha = document.getElementById('fecha').value;
-
       const numeroWhatsApp = "59899654321"; // Número del negocio
 
-      const mensaje = `¡Hola! Quiero reservar un turno para *${servicio}*.%0A
-Nombre: ${nombre}%0A
-Auto: ${auto}%0A
-Fecha: ${fecha}`;
+      if (carrito.length === 0) {
+        alert("Por favor, seleccioná al menos un servicio antes de enviar.");
+        return;
+      }
 
+      const listaServicios = carrito.map(item => `• ${item.nombre} - $${item.precio}`).join('%0A');
+      const total = carrito.reduce((acc, item) => acc + item.precio, 0);
+
+      const mensaje = `¡Hola! Quiero reservar los siguientes servicios:%0A${listaServicios}%0A%0ATotal: $${total}%0A%0ANombre: ${nombre}%0AAuto: ${auto}%0AFecha: ${fecha}`;
       const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
       window.open(url, "_blank");
     });
